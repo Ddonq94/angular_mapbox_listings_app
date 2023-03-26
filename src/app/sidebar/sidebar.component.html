@@ -1,0 +1,19 @@
+<div class="sidebar">
+  <button class="block" *ngIf="sub" (click)="return()">Back to Results</button>
+
+  <div *ngIf="!sub">
+    <h2 class="sidebarHeader">
+      <span *ngIf="mapService.agent | async; let agent">
+        {{ agent?.firstname }}'s </span
+      >{{ title }} <br />
+    </h2>
+
+    <app-card
+      *ngFor="let record of records"
+      [record]="record"
+      (click)="goToPoint(record)"
+    ></app-card>
+  </div>
+
+  <app-subcard *ngIf="sub" [recordID]="recordID"></app-subcard>
+</div>

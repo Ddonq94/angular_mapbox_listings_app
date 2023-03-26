@@ -1,0 +1,44 @@
+.centered {
+  text-align: center;
+}
+
+.head {
+  background-color: #68b1f5;
+  color: white;
+  padding: 10px;
+  margin: 0px;
+}
+
+.top {
+  background-color: #68b1f5;
+  color: white;
+  padding: 15px;
+}
+
+.horizontalList {
+  padding: 15px;
+  font-size: 15px;
+  border-bottom: 1px #dbdbdb solid;
+}
+
+.horizontalList > h4 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.horizontalListChild {
+  margin-bottom: 20px;
+}
+
+.horizontalListChild > *:nth-child(1) {
+  margin-right: 10px;
+  color: #68b1f5;
+}
+
+.heart {
+  color: red;
+}
+
+.global {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

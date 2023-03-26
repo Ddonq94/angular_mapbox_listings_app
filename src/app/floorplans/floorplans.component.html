@@ -1,0 +1,10 @@
+<div
+  *ngIf="record && record.floorplans"
+  fxLayout="row"
+  fxLayoutAlign="space-between"
+>
+  <div class="beds" fxFlex="{{ width }}" *ngFor="let plan of record.floorplans">
+    <fa-icon [icon]="faBed"></fa-icon> {{ plan.bedrooms }} <br />
+    {{ plan.price | currency }}
+  </div>
+</div>

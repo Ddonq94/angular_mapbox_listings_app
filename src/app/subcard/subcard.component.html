@@ -1,0 +1,72 @@
+<div *ngIf="!(fullRecord$ | async); let fullRecord" class="">
+  <img src="assets/map_loading.gif" alt="" width="100%" />
+</div>
+<div *ngIf="fullRecord$ | async; let fullRecord" class="global">
+  <h2 class="centered head">
+    {{ fullRecord.name }}
+    <fa-icon
+      class="heart"
+      *ngIf="fullRecord.favorite"
+      [icon]="faHeart"
+    ></fa-icon>
+    <br /><small>({{ fullRecord.city }})</small>
+  </h2>
+  <p class="centered head">
+    <small>
+      Built: {{ fullRecord.yearBuilt }} | Renovated:
+      {{ fullRecord.yearRenovated }}</small
+    >
+  </p>
+  <div class="centered top" fxLayout="row" fxLayoutAlign="space-between">
+    <app-headicon
+      [href]="'tel:' + fullRecord.phone"
+      [icon]="faPhone"
+      [text]="'Call'"
+    ></app-headicon>
+    <app-headicon
+      [href]="'mailto:' + fullRecord.email"
+      [icon]="faEnvelope"
+      [text]="'Email'"
+    ></app-headicon>
+    <app-headicon
+      [href]="fullRecord.url"
+      [icon]="faGlobe"
+      [text]="'Website'"
+    ></app-headicon>
+  </div>
+  <div
+    *ngIf="fullRecord.streetAddress || fullRecord.streetAddress"
+    class="horizontalList"
+    fxLayout="column"
+    fxLayoutAlign="space-between"
+  >
+    <div *ngIf="fullRecord.streetAddress" class="horizontalListChild">
+      <fa-icon [icon]="faBuilding"></fa-icon>
+      {{ fullRecord.streetAddress }}
+    </div>
+
+    <div *ngIf="fullRecord.neighborhood" class="horizontalListChild">
+      <fa-icon [icon]="faLayerGroup"></fa-icon>
+      {{ fullRecord.neighborhood }}
+    </div>
+  </div>
+  <div class="horizontalList">
+    <app-amenities
+      [title]="'High Value Amenities'"
+      [amenities]="fullRecord.highValueAmenities"
+    ></app-amenities>
+  </div>
+  <div class="horizontalList">
+    <app-amenities
+      [title]="'Property Amenities'"
+      [amenities]="fullRecord.propertyAmenities"
+    ></app-amenities>
+  </div>
+
+  <div class="horizontalList">
+    <app-amenities
+      [title]="'Unit Amenities'"
+      [amenities]="fullRecord.unitAmenities"
+    ></app-amenities>
+  </div>
+</div>

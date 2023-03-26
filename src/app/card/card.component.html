@@ -1,0 +1,33 @@
+<div class="card">
+  <div *ngIf="record" class="container">
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <div fxFlex="64%">
+        <p>
+          <span
+            >{{ record.name }}
+            <fa-icon
+              class="heart"
+              *ngIf="record.favorite"
+              [icon]="faHeart"
+            ></fa-icon></span
+          ><br /><small class="subTitle">{{
+            record.streetAddress + ", " + record.city + " " + record.state
+          }}</small>
+        </p>
+        <app-floorplans [record]="record"></app-floorplans>
+        <small class="subTitle"
+          >{{ record.highValueAmenities.length }} High Value Amenities</small
+        >
+      </div>
+      <div fxFlex="1%"></div>
+      <div fxFlex="35%">
+        <img
+          src="{{ record.photo ? record.photo : 'assets/404.jpg' }}"
+          alt=""
+          height="100%"
+          width="100%"
+        />
+      </div>
+    </div>
+  </div>
+</div>

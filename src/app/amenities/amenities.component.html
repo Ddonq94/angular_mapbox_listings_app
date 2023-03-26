@@ -1,0 +1,6 @@
+<h4 class="centered">{{ title }}</h4>
+<div fxLayout="column" fxLayoutAlign="space-between">
+  <div class="amenity" *ngFor="let a of amenities">
+    <fa-icon class="icon" [icon]="faAngleRight"></fa-icon>{{ a }}
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.centered {
+  text-align: center;
+}
+
+h4 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  margin-right: 10px;
+  color: #68b1f5;
+}
+
+.amenity {
+  margin-bottom: 5px;
+}
