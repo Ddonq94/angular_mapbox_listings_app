@@ -1,5 +1,7 @@
 # Smartmap
 
+Angular app showing property listings on a map using redux (ng_rx) for state management
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
 ## Development server
